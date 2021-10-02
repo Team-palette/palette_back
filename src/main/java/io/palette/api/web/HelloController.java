@@ -15,6 +15,6 @@ public class HelloController {
 
     @GetMapping("/eunji")
     public ResponseEntity<String> eunji() {
-        return ResponseEntity.ok("hi");
+        return ResponseEntity.ok("hi22");
     }
 }
