@@ -16,10 +16,10 @@ spring:
         default_batch_fetch_size: 500
         format_sql: true
         jdbc:
-          time_zone: UTC
+          time_zone: KST
 
   datasource:
-    url: jdbc:h2:mem:palette?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+    url: jdbc:h2:mem:palette?useSSL=false&serverTimezone=KST&useLegacyDatetimeCode=false&characterEncoding=UTF-8
     driverClassName: org.h2.Driver
     username: sa
     password:
