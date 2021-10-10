@@ -1,6 +1,8 @@
 package io.palette.api.domain.users;
 
 import io.palette.api.domain.BaseTimeEntity;
+import io.palette.api.domain.posts.Posts;
+import io.palette.api.domain.posts.PostsLike;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -57,6 +59,15 @@ public class Users extends BaseTimeEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = {CascadeType.ALL})
     private List<UsersStacks> usersStacksList = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = {CascadeType.ALL})
+    private List<Palettes> palettes = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = {CascadeType.ALL})
+    private List<Posts> posts = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = {CascadeType.ALL})
+    private List<PostsLike> postsLikes = new ArrayList<>();
 
     @Builder
     public Users (String loginId, String password, String email, String nickname) {
