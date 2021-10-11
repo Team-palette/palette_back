@@ -19,7 +19,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Where;
-// 주석
+
 @Where(clause = "deleted = false")
 @Table(name = "posts")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
