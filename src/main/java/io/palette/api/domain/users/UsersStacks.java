@@ -22,9 +22,11 @@ public class UsersStacks extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "stacks_id")
     private Stacks stacks;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "users_id")
     private Users users;
 
     @Column(name = "deleted", nullable = false)
@@ -34,6 +36,5 @@ public class UsersStacks extends BaseTimeEntity {
     public UsersStacks(Stacks stacks, Users users) {
         this.stacks = stacks;
         this.users = users;
-        this.deleted = false;
     }
 }

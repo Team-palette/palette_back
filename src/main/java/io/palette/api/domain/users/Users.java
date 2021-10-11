@@ -56,7 +56,6 @@ public class Users extends BaseTimeEntity {
     @Column(name = "deleted")
     private boolean deleted;
 
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = {CascadeType.ALL})
     private List<UsersStacks> usersStacksList = new ArrayList<>();
 
@@ -70,14 +69,12 @@ public class Users extends BaseTimeEntity {
     private List<PostsLike> postsLikes = new ArrayList<>();
 
     @Builder
-    public Users (String loginId, String password, String email, String nickname) {
+    public Users (String loginId, String password, String email, String nickname, List<UsersStacks> usersStacksList) {
         this.loginId = loginId;
         this.password = password;
         this.email = email;
         this.nickname = nickname;
-
-        this.emailVerified = false;
-        this.deleted = false;
+        this.usersStacksList = usersStacksList;
     }
 
 }
