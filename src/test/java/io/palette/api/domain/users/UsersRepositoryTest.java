@@ -35,6 +35,7 @@ class UsersRepositoryTest {
                 .password("1234")
                 .email("email2@email.com")
                 .nickname("nickname2")
+                .usersStacksList(new ArrayList<>())
                 .build();
 
         usersRepository.saveAll(List.of(user1, user2));
@@ -84,6 +85,7 @@ class UsersRepositoryTest {
                     .password("1234")
                     .email("email" + t + "@email.com")
                     .nickname("nickname" + t)
+                    .usersStacksList(new ArrayList<>())
                     .build();
 
             users.add(user);
